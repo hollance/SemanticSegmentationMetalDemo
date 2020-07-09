@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shadow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleToFill" fixedFrame="YES" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="blj-ax-fZu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mtkView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSb-q8-6Ds" userLabel="Video Preview">
+                                <rect key="frame" x="0.0" y="507" width="90" height="160"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label="Video Preview"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="3sJ-CN-Upn"/>
+                                    <constraint firstAttribute="height" constant="160" id="Eiy-O3-YQn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30.0 FPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNe-66-u8R" userLabel="FPS Label">
+                                <rect key="frame" x="151.5" y="629.5" width="72.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBA-Sr-t9Z" userLabel="Switch Camera">
+                                <rect key="frame" x="315" y="20" width="44" height="44"/>
+                                <state key="normal" image="SwitchCamera"/>
+                                <connections>
+                                    <action selector="switchCamera" destination="BYZ-38-t0r" eventType="touchUpInside" id="8uW-wD-8sn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJ4-5Z-Suk" userLabel="Toggle Video Preview">
+                                <rect key="frame" x="20" y="547" width="50" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="HvU-gR-SUp"/>
+                                    <constraint firstAttribute="height" constant="80" id="gAi-KB-gvi"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="toggleVideoPreview" destination="BYZ-38-t0r" eventType="touchUpInside" id="cdI-6A-m1s"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-xN-SH6">
+                                <rect key="frame" x="84" y="212" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blz-YJ-Q7h" userLabel="Show Menu">
+                                <rect key="frame" x="16" y="20" width="44" height="44"/>
+                                <state key="normal" image="Menu"/>
+                                <connections>
+                                    <segue destination="0AS-Os-q3w" kind="popoverPresentation" identifier="ShowMenu" popoverAnchorView="Blz-YJ-Q7h" id="mm0-PS-fQ9">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CJ4-5Z-Suk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8G2-rs-xFV"/>
+                            <constraint firstItem="wSb-q8-6Ds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9mI-40-6Yo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CJ4-5Z-Suk" secondAttribute="bottom" constant="40" id="En6-S7-v3h"/>
+                            <constraint firstItem="Blz-YJ-Q7h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FfC-ZJ-xUg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FBA-Sr-t9Z" secondAttribute="trailing" constant="16" id="MwE-Vt-l1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NNe-66-u8R" secondAttribute="bottom" constant="20" id="RG1-Kj-rOA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wSb-q8-6Ds" secondAttribute="bottom" id="TZ5-DM-UL6"/>
+                            <constraint firstItem="FBA-Sr-t9Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zg0-up-pPC"/>
+                            <constraint firstItem="Blz-YJ-Q7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gJN-iq-5q8"/>
+                            <constraint firstItem="NNe-66-u8R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s3R-31-ann"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="control" destination="EQY-xN-SH6" id="L43-6S-kas"/>
+                        <outlet property="fpsLabel" destination="NNe-66-u8R" id="17j-A4-S5i"/>
+                        <outlet property="menuButton" destination="Blz-YJ-Q7h" id="XQX-aY-Du2"/>
+                        <outlet property="metalView" destination="blj-ax-fZu" id="kjB-T4-gng"/>
+                        <outlet property="videoPreview" destination="wSb-q8-6Ds" id="M5X-oq-wwY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="L8h-Ds-UCd">
+            <objects>
+                <tableViewController storyboardIdentifier="Menu" modalPresentationStyle="formSheet" id="0AS-Os-q3w" customClass="MenuViewController" customModule="Shadow" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBC-gl-J6C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="veO-tY-ips" style="IBUITableViewCellStyleDefault" id="Sds-m0-Un2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sds-m0-Un2" id="FvE-aV-4pH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="veO-tY-ips">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3On-pF-uBB" kind="unwind" unwindAction="modeDidChangeWithSegue:" id="nh2-1F-ZtZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0AS-Os-q3w" id="YyK-da-Yg3"/>
+                            <outlet property="delegate" destination="0AS-Os-q3w" id="9yY-Qq-uu5"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fX1-Nc-3hP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3On-pF-uBB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Menu" width="44" height="44"/>
+        <image name="SwitchCamera" width="44" height="44"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</document>
